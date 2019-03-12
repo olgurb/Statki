@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\PlayerBase.cs" />
     <Compile Include="Point\Point.cs" />
     <Compile Include="Program.cs" />

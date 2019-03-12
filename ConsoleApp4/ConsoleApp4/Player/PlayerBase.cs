@@ -24,6 +24,5 @@ namespace ConsoleApp4.Player
         }
         public abstract void SetupShips();
         public abstract void MakeMove();
-        
     }
 }
