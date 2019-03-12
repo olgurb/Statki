@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Console.Point;
+﻿using Console.Point;
 
 namespace ConsoleApp4.Utilities
 {

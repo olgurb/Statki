@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Console.Point;
 using ConsoleApp4.Utilities;
 
-namespace ConsoleApp4.Ship
+namespace ConsoleApp4.ShipUrb
 {
-    class Ship
+    public class Ship
     {
        private int Lifes { get; set; }
        private Point Start { get; set; }
