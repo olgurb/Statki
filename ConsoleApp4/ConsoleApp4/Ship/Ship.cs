@@ -18,12 +18,12 @@ namespace ConsoleApp4.Ship
        public Ship(Point start, Point end) {
             Start = start;
             End = end;
-            if (start.x == end.x)
+            if (start.XPos == end.XPos)
             {
-                lifes = Math.Abs(end.y - start.y) + 1;
+                lifes = Math.Abs(end.YPos - start.YPos) + 1;
             }
             else
-                lifes = Math.Abs(end.x - start.x) + 1; 
+                lifes = Math.Abs(end.XPos - start.XPos) + 1; 
         }
         public void ReduceLife()
         {
@@ -37,11 +37,7 @@ namespace ConsoleApp4.Ship
 
         public void CheckIfShooted(Point xy)
         {
-            if (xy.x>=Start.x && xy.x<=End.x && xy.y==Start.y)
-            {
-                ReduceLife();
-                System.Console.WriteLine("Trafiłes");
-            }
+            
         }
 
     }
