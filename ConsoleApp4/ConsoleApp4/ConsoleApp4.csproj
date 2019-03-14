@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\GameBoard.cs" />
     <Compile Include="Game\GameConfiguration.cs" />
+    <Compile Include="Game\GameManager.cs" />
     <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\PlayerBase.cs" />
+    <Compile Include="Point\BoardPoint.cs" />
     <Compile Include="Point\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
