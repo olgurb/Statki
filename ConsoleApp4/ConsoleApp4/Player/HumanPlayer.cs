@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using Console.Point;
+using ConsoleApp4.ShipUrb;
 
 namespace ConsoleApp4.Player
 {
@@ -17,6 +19,11 @@ namespace ConsoleApp4.Player
 
         public override void SetupShips()
         {
+        }
+
+        protected override Ship CreateShipWithgivenLifes(int lifes)
+        {
+            return Ships.First();
         }
 
         private Point GetPointFromString(string inputString)
