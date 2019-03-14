@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using Console.Point;
 using ConsoleApp4.ShipUrb;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleApp4.Player
 {
@@ -23,6 +26,11 @@ namespace ConsoleApp4.Player
             Ships = new List<Ship>();
         }
         public abstract void SetupShips();
-        public abstract void MakeMove();
+        public abstract Point MakeMove();
+        protected abstract Ship CreateShipWithgivenLifes(int lifes);
+        protected bool CheckIfShipLocationIsValid(Ship ship)
+        {
+            return true;
+        }
     }
 }

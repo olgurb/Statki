@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Console.Point;
 using ConsoleApp4.Utilities;
 
@@ -28,7 +30,21 @@ namespace ConsoleApp4.ShipUrb
                 Lifes = Math.Abs(end.XPos - start.XPos) + 1; 
         }
 
-        private int ReduceLife() => Lifes--;
+        public bool CheckIfColidesWithAnotherShip(Ship ship)
+        {
+            return true;
+        } 
+
+        public IEnumerable<Point> GetAllPointsOfShip(Ship ship)
+        {
+            if(Start.YPos == End.YPos)
+            {
+                return Enumerable.Range(Math.Min(Start.XPos, End.XPos), Math.Abs(Start.XPos - End.XPos)).Select(c => new Point(c, Start.YPos));
+            } else
+            {
+                return Enumerable.Range(Math.Min(Start.YPos, End.YPos), Math.Abs(Start.YPos - End.YPos)).Select(c => new Point(Start.XPos, c));
+            }
+        }
 
         public bool CheckIfShooted(Point shoot)
         {
@@ -41,5 +57,7 @@ namespace ConsoleApp4.ShipUrb
             }
             return false;
         }
+
+        private int ReduceLife() => Lifes--;
     }
 }
