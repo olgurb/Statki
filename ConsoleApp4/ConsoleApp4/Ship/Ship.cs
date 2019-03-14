@@ -6,6 +6,7 @@ using ConsoleApp4.Utilities;
 
 namespace ConsoleApp4.ShipUrb
 {
+
     public class Ship
     {
        private int Lifes { get; set; }
@@ -58,6 +59,6 @@ namespace ConsoleApp4.ShipUrb
             return false;
         }
 
-        private int ReduceLife() => Lifes--;
+        private int ReduceLife() => --Lifes;
     }
 }

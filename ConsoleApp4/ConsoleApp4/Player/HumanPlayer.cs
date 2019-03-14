@@ -17,7 +17,6 @@ namespace ConsoleApp4.Player
 
         public override void SetupShips()
         {
-            
         }
 
         private Point GetPointFromString(string inputString)

@@ -8,6 +8,6 @@ namespace ConsoleApp4.Game
 {
     public static class GameConfiguration
     {
-        public static readonly int 
+        public static readonly int FieldSize = 5;
     }
 }
