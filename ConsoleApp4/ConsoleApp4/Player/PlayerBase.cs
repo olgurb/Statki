@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4.Player
 {
-    abstract class PlayerBase
+    public abstract class PlayerBase
     {
         public string Name { get; private set; }
         public string VictoryCry { get; private set; }
@@ -31,7 +31,7 @@ namespace ConsoleApp4.Player
         protected abstract Ship CreateShipWithgivenLifes(ShipConfig shipConfig);
         protected bool CheckIfShipLocationIsValid(Ship ship)
         {
-            return true;
+            return Ships.Any(s => ship.CheckIfColidesWithAnotherShip(s));
         }
     }
 }

@@ -34,7 +34,7 @@ namespace ConsoleApp4.ShipUrb
             // TODO: it should also check if there is any ship in the nearest neighbourhood
             var currentShipPoints = GetAllPointsOfShip();
             var inputShipPoints = ship.GetAllPointsOfShip();
-            return currentShipPoints.Except(inputShipPoints).Any() && inputShipPoints.Except(currentShipPoints).Any();
+            return currentShipPoints.Any(p => inputShipPoints.Any(ip => p == ip));
         } 
 
         public bool CheckIfShooted(Point shoot)

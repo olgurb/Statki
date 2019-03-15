@@ -22,7 +22,7 @@ namespace ConsoleApp4.Player
         {
         }
 
-        protected override Ship CreateShipWithgivenLifes(ShipConfig)
+        protected override Ship CreateShipWithgivenLifes(ShipConfig shipConfig)
         {
             return Ships.First();
         }
