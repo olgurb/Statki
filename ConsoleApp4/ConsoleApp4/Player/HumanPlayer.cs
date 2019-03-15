@@ -2,6 +2,7 @@
 using System.Linq;
 using Console.Point;
 using ConsoleApp4.ShipUrb;
+using ConsoleApp4.Game;
 
 namespace ConsoleApp4.Player
 {
@@ -21,7 +22,7 @@ namespace ConsoleApp4.Player
         {
         }
 
-        protected override Ship CreateShipWithgivenLifes(int lifes)
+        protected override Ship CreateShipWithgivenLifes(ShipConfig)
         {
             return Ships.First();
         }

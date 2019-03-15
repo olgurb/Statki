@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Game\GameBoard.cs" />
     <Compile Include="Game\GameConfiguration.cs" />
-    <Compile Include="Game\GameManager.cs" />
+    <Compile Include="Game\ShipConfig.cs" />
     <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\PlayerBase.cs" />
     <Compile Include="Point\BoardPoint.cs" />
