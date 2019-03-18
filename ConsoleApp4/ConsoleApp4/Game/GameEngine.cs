@@ -35,6 +35,7 @@ namespace ConsoleApp4.Game
             PlayerOne.SetupShips();
             PlayerTwo.SetupShips();
             // TODO: finish this next time
+           
         }
 
         private bool isPlayerOneFirst()
