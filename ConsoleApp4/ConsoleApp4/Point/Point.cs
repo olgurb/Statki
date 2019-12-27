@@ -12,6 +12,16 @@ namespace Console.Point
             YPos = y;
         }
 
+        public static bool operator == (Point first, Point second)
+        {
+            return first.XPos == second.XPos && first.YPos == second.YPos;
+        }
+
+        public static bool operator != (Point first, Point second)
+        {
+            return first.XPos != second.XPos && first.YPos != second.YPos;
+        }
+
         public bool CheckIfInRange(Point startPoint, Point endPoint)
         {
             if (!Utils.IsIntegerInRange(XPos, startPoint.XPos, endPoint.XPos)

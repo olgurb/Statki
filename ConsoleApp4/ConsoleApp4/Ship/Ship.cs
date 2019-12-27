@@ -24,28 +24,18 @@ namespace ConsoleApp4.ShipUrb
             Start = start;
             End = end;
             if (start.XPos == end.XPos)
-            {
                 Lifes = Math.Abs(end.YPos - start.YPos) + 1;
-            }
             else
                 Lifes = Math.Abs(end.XPos - start.XPos) + 1; 
         }
 
         public bool CheckIfColidesWithAnotherShip(Ship ship)
         {
-            return true;
+            // TODO: it should also check if there is any ship in the nearest neighbourhood
+            var currentShipPoints = GetAllPointsOfShip();
+            var inputShipPoints = ship.GetAllPointsOfShip();
+            return currentShipPoints.Any(p => inputShipPoints.Any(ip => p == ip));
         } 
-
-        public IEnumerable<Point> GetAllPointsOfShip(Ship ship)
-        {
-            if(Start.YPos == End.YPos)
-            {
-                return Enumerable.Range(Math.Min(Start.XPos, End.XPos), Math.Abs(Start.XPos - End.XPos)).Select(c => new Point(c, Start.YPos));
-            } else
-            {
-                return Enumerable.Range(Math.Min(Start.YPos, End.YPos), Math.Abs(Start.YPos - End.YPos)).Select(c => new Point(Start.XPos, c));
-            }
-        }
 
         public bool CheckIfShooted(Point shoot)
         {
@@ -59,6 +49,19 @@ namespace ConsoleApp4.ShipUrb
             return false;
         }
 
+        public IEnumerable<Point> GetAllPointsOfShip()
+        {
+            if (Start.YPos == End.YPos)
+            {
+                return Enumerable.Range(Math.Min(Start.XPos, End.XPos), Math.Abs(Start.XPos - End.XPos))
+                    .Select(c => new Point(c, Start.YPos));
+            }
+            else
+            {
+                return Enumerable.Range(Math.Min(Start.YPos, End.YPos), Math.Abs(Start.YPos - End.YPos))
+                    .Select(c => new Point(Start.XPos, c));
+            }
+        }
         private int ReduceLife() => --Lifes;
     }
 }

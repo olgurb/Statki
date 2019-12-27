@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using Console.Point;
 using ConsoleApp4.ShipUrb;
+using ConsoleApp4.Game;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp4.Player
 {
-    abstract class PlayerBase
+    public abstract class PlayerBase
     {
         public string Name { get; private set; }
         public string VictoryCry { get; private set; }
@@ -27,10 +28,10 @@ namespace ConsoleApp4.Player
         }
         public abstract void SetupShips();
         public abstract Point MakeMove();
-        protected abstract Ship CreateShipWithgivenLifes(int lifes);
+        protected abstract Ship CreateShipWithgivenLifes(ShipConfig shipConfig);
         protected bool CheckIfShipLocationIsValid(Ship ship)
         {
-            return true;
+            return Ships.Any(s => ship.CheckIfColidesWithAnotherShip(s));
         }
     }
 }
